@@ -22,7 +22,7 @@ def make_discriminator_model(input_dim):
         layers.Dropout(0.3),
         layers.Dense(256, activation='relu'),
         layers.Dropout(0.3),
-        layers.Dense(1, activation='sigmoid')
+        layers.Dense(1, activation='sigmoid'),
     ])
     return model
 
@@ -127,7 +127,7 @@ def generate_synthetic_data(num_samples, epochs, seed_file, has_header):
     print(generated_df.head())
 
 # --- New CLI section with the 'input' prompt ---
-if __name__ == '__main__':
+if _name_ == '_main_':
     parser = argparse.ArgumentParser(description='Generate synthetic medical data using a GAN.')
     parser.add_argument('--epochs', type=int, default=5000,
                         help='Number of training epochs for the GAN.')
